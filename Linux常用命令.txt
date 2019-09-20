@@ -1,0 +1,45 @@
+进程：
+ps -ef|grep java 查询进程
+
+简单安装：
+yum install java 下载并安装
+
+安装包安装：
+./configure --prefix=/usr/local --prefix表示配置安装路径
+make 编译
+make install 安装
+
+安装包：
+rpm -qa | grep java 查询是否已安装
+rpm -ql java_X86 查看java_X86安装的路径
+
+文件：
+cat file 查看文件
+vim file 编辑文件
+find / -name file1 查找文件
+touch 新建文件
+rm -rf 删除文件
+mv redis.tar.gz /usr/local 将文件移动到指定目录
+mv a b 将文件夹改名
+chown -R user:user /file 将文件夹所有人赋予user
+
+压缩包：
+tar -zxvf archive.tar 解压
+
+系统配置：
+vi /etc/sysconfig/network-scripts/ifcfg-ens33 设置网络信息
+service network restart 重启network网络服务
+sudo systemctl stop firewalld 一次性关闭防火墙
+sudo systemctl disable firewalld 永久关闭防火墙
+sudo systemctl start firewalld 一次性开启防火墙
+sudo systemctl enable firewalld 开机自启防火墙
+firewall-cmd --zone=public --add-port=9200/tcp --permanent 开启端口
+
+用户权限：
+su -root 切换用户
+
+查找位置：
+whereis 项目
+
+一些系统的启动
+systemctl start mysqld.service 启动mysql

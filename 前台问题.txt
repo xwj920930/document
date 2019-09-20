@@ -1,0 +1,29 @@
+js:
+1.生成json对象
+var json_obj = [];
+var row1 = {};
+row1.id = "1";
+row1.name = "xwj";
+json_obj.push(row1);
+
+jquery:
+1.操作内在属性的时候(例如radio的checked)用prop()，其他情况可以用attr()
+2.ajax的get请求会自动缓存数据，post不会
+
+vue：
+1.获取选中按钮的id（html:v-bind:id,v-on:click($event),js:function(event),$(event.target)）
+
+ajax：
+get请求传递参数/springmvc接收get请求：
+一：
+http:///ip:port/xx/get/1
+@GetMapping("/get/{id}")
+public User getUserByPathValue(@PathVariable(name = "id", required = true) Integer id) 
+二：
+http://ip:port/xx/get?id=1
+@GetMapping("/get")
+public User getUserById(@RequestParam(name = "id", required = true) Integer id)
+或者public User getUserById(Integer id)
+
+跨域：(1域名完全不同，2二级域名不同，3域名相同端口不同)
+为了安全ajax存在跨域问题，域名A的ajax不能向域名B的服务发送请求

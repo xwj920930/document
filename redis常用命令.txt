@@ -1,0 +1,10 @@
+windows：
+任务管理器启动redis服务
+cmd之后进入安装文件夹，执行redis-cli
+
+命令：
+获取所有的key：keys *
+删除所有的key：flushdb
+增加/修改：set key value
+获取：get key
+删除：del key

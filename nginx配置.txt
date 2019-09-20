@@ -1,0 +1,209 @@
+Linux：
+yum报错找不到mirror：
+到/etc目录下配置resolv.conf加入nameserver IP,如： 
+nameserver 8.8.8.8 
+nameserver 8.8.4.4 
+search localdomain 
+
+ngin依赖安装：
+yum install gcc-c++  
+yum -y install pcre*  
+yum -y install openssl* 
+yum -y install gcc gcc-c++ autoconf automake make（可忽略）
+
+
+增加用户：
+useradd leyou
+/home/leyou会自动创建该文件夹
+
+解压：
+tar -xvf
+
+nginx配置：
+进入nginx文件夹
+./configure --prefix=/opt/nginx --sbin-path=/usr/bin/nginx
+
+编译安装：
+make && make install
+
+启动：
+nginx
+停止：nginx -s stop
+重启：nginx -s reload
+
+测试：
+访问ip后自动跳到nginx欢迎页面
+
+注意：
+nginx配置文件存在于两个目录下，通过命令nginx -t既可以检查nginx.config文件的有效性，又能知道有效文件的路径
+
+安装telnet
+yum install telnet
+yum install telnet-server
+yum install xinetd
+systemctl enable xinetd.service 加入开机自启
+systemctl enable telnet.socket 加入开机自启
+systemctl start telnet.socket 启动
+systemctl start xinetd 启动
+
+
+
+- 设置nginx开机启动
+
+  创建一个开机启动的脚本：
+
+  ```shell
+  vim /etc/init.d/nginx
+  ```
+
+  添加以下内容：
+
+  ```sh
+  #!/bin/sh
+  #
+  # nginx - this script starts and stops the nginx daemon
+  #
+  # chkconfig:   - 85 15
+  # description:  NGINX is an HTTP(S) server, HTTP(S) reverse \
+  #               proxy and IMAP/POP3 proxy server
+  # processname: nginx
+  # config:      /etc/nginx/nginx.conf
+  # config:      /etc/sysconfig/nginx
+  # pidfile:     /var/run/nginx.pid
+
+  # Source function library.
+  . /etc/rc.d/init.d/functions
+
+  # Source networking configuration.
+  . /etc/sysconfig/network
+
+  # Check that networking is up.
+  [ "$NETWORKING" = "no" ] && exit 0
+
+  nginx="/usr/bin/nginx"
+  prog=$(basename $nginx)
+
+  NGINX_CONF_FILE="/opt/nginx/conf/nginx.conf"
+
+  [ -f /etc/sysconfig/nginx ] && . /etc/sysconfig/nginx
+
+  lockfile=/var/lock/subsys/nginx
+
+  make_dirs() {
+     # make required directories
+     user=`$nginx -V 2>&1 | grep "configure arguments:.*--user=" | sed 's/[^*]*--user=\([^ ]*\).*/\1/g' -`
+     if [ -n "$user" ]; then
+        if [ -z "`grep $user /etc/passwd`" ]; then
+           useradd -M -s /bin/nologin $user
+        fi
+        options=`$nginx -V 2>&1 | grep 'configure arguments:'`
+        for opt in $options; do
+            if [ `echo $opt | grep '.*-temp-path'` ]; then
+                value=`echo $opt | cut -d "=" -f 2`
+                if [ ! -d "$value" ]; then
+                    # echo "creating" $value
+                    mkdir -p $value && chown -R $user $value
+                fi
+            fi
+         done
+      fi
+  }
+
+  start() {
+      [ -x $nginx ] || exit 5
+      [ -f $NGINX_CONF_FILE ] || exit 6
+      make_dirs
+      echo -n $"Starting $prog: "
+      daemon $nginx -c $NGINX_CONF_FILE
+      retval=$?
+      echo
+      [ $retval -eq 0 ] && touch $lockfile
+      return $retval
+  }
+
+  stop() {
+      echo -n $"Stopping $prog: "
+      killproc $prog -QUIT
+      retval=$?
+      echo
+      [ $retval -eq 0 ] && rm -f $lockfile
+      return $retval
+  }
+
+  restart() {
+      configtest || return $?
+      stop
+      sleep 1
+      start
+  }
+
+  reload() {
+      configtest || return $?
+      echo -n $"Reloading $prog: "
+      killproc $nginx -HUP
+      RETVAL=$?
+      echo
+  }
+
+  force_reload() {
+      restart
+  }
+
+  configtest() {
+    $nginx -t -c $NGINX_CONF_FILE
+  }
+
+  rh_status() {
+      status $prog
+  }
+
+  rh_status_q() {
+      rh_status >/dev/null 2>&1
+  }
+
+  case "$1" in
+      start)
+          rh_status_q && exit 0
+          $1
+          ;;
+      stop)
+          rh_status_q || exit 0
+          $1
+          ;;
+      restart|configtest)
+          $1
+          ;;
+      reload)
+          rh_status_q || exit 7
+          $1
+          ;;
+      force-reload)
+          force_reload
+          ;;
+      status)
+          rh_status
+          ;;
+      condrestart|try-restart)
+          rh_status_q || exit 0
+              ;;
+      *)
+          echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest}"
+          exit 2
+  esac
+
+  ```
+
+- 修改文件权限，并加入服务列表
+
+  ```shell
+  # 修改权限
+  chmod 777 /etc/init.d/nginx 
+  # 添加到服务列表
+  chkconfig --add /etc/init.d/nginx 
+  ```
+
+- 设置开机启动
+
+  ```shell
+  chkconfig nginx on
+  ```

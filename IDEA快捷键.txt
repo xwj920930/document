@@ -1,0 +1,48 @@
+idea（copy eclipse）快捷键：
+快速查看方法：ctrl+o
+
+快速转换编辑器：ctrl+e
+
+智能补全：Alt + /
+
+回到最后一次编辑的地方：ctrl+q
+
+拼写检查/问题解决：Alt + Enter
+
+修改文件名：shift+alt+r
+
+打开类：shift+ctrl+t
+
+Get和set生成：alt+insert
+
+Try catch生成：Ctrl+Alt+T
+
+打开方法查找：Ctrl+shift+alt+n
+
+Main方法：psvm
+
+删除一行：Ctrl+d
+
+打开方法的实现：Ctrl+t
+
+查看方法被谁调用：Ctrl+g
+
+for循环快捷提示：fori或itar
+
+foreach循环快捷提示：iter或list.for
+
+删除无用的import：Ctrl+shift+o
+
+debug调试：F6一步，F8跳到下个节点，F5进入游标当前方法，F7步出
+
+查看方法说明：点击后F2
+
+快速构件语句：new T().var快速生成T t=new T();
+
+大小写转换：Ctrl+shift+u
+
+生成try：.try
+
+查看类的继承关系：F4
+
+快速生成单元测试：鼠标选择类名，alt+enter

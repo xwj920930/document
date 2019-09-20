@@ -1,0 +1,22 @@
+https://jingyan.baidu.com/article/ce4366495d9bf43772afd359.html?from=singlemessage
+注意：每换一次wifi最好点击虚拟网络编辑器的还原默认设置
+是否通网：ping www.baidu.com
+
+Telnet失败
+systemctl stop firewalld 临时关闭防火墙
+systemctl disable firewalld 禁止开机启动防火墙
+检查Linux是否有telnet
+
+关闭Linux和windows防火墙
+
+yum时报错：
+原因：没有配置resolv.conf 
+解决方法: 
+到/etc目录下配置resolv.conf加入nameserver IP,如： 
+nameserver 8.8.8.8 
+nameserver 8.8.4.4 
+search localdomain 
+
+windows开启telnet
+
+windows开启特定的需要访问的端口
