@@ -1,0 +1,7 @@
+1.@Import和ImportBeanDefinitionRegistrar成对出现，动态bean注入，类似@component
+
+2.注解处理器可以在编译期动态生成代码
+
+3.实现ApplicationContextAware接口可以获取applicationContext上下文
+
+？？？.spring自定义监听器
