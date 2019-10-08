@@ -69,11 +69,11 @@ GlobalSession（给每一个 global http session新建一个Bean实例）
 6、@Value注解
 @Value 为属性注入值（属性上）
 
-9、定时任务相关
+7、定时任务相关
 @EnableScheduling 在配置类上使用，开启计划任务的支持（类上）
 @Scheduled 来申明这是一个任务，包括cron,fixDelay,fixRate等类型（方法上，需先开启计划任务的支持）
 
-10、@Enable*注解说明
+8、@Enable*注解说明
 这些注解主要用来开启对xxx的支持。
 @EnableAspectJAutoProxy 开启对AspectJ自动代理的支持
 @EnableAsync 开启异步方法的支持
@@ -85,7 +85,7 @@ GlobalSession（给每一个 global http session新建一个Bean实例）
 @EnableTransactionManagement 开启注解式事务的支持
 @EnableCaching 开启注解式的缓存支持
 
-11、测试相关注解
+9、测试相关注解
 @RunWith 运行器，Spring中通常用于对JUnit的支持
 @ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类
 
@@ -103,3 +103,7 @@ SpringMVC部分
 @ExceptionHandler 用于全局处理控制器里的异常
 @InitBinder 用来设置WebDataBinder，WebDataBinder用来自动绑定前台请求参数到Model中。
 @ModelAttribute 本来的作用是绑定键值对到Model里，在@ControllerAdvice中是让全局的@RequestMapping都能获得在此处设置的键值对。
+
+
+lombok部分
+@Accessors(chain = true)使用链式设置属性,set方法返回的是this对象，可以做到new Object().setA().setB()...
