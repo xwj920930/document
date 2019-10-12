@@ -5,3 +5,5 @@
 3.实现ApplicationContextAware接口可以获取applicationContext上下文
 
 ？？？.spring自定义监听器，java自定义监听器(观察者模式)，java自定义监听器注解实现
+
+？？？springboot动态数据源切换（读写分离@TargetDataSource）

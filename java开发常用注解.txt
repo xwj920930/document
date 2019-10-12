@@ -89,6 +89,9 @@ GlobalSession（给每一个 global http session新建一个Bean实例）
 @RunWith 运行器，Spring中通常用于对JUnit的支持
 @ContextConfiguration 用来加载配置ApplicationContext，其中classes属性用来加载配置类
 
+10，异步
+@Async 写在service的方法中，作用就是开启异步线程，需要先配置@EnableAsync
+
 
 SpringMVC部分
 @EnableWebMvc 在配置类中开启Web MVC的配置支持，如一些ViewResolver或者MessageConverter等，若无此句，重写WebMvcConfigurerAdapter方法（用于对SpringMVC的配置）。

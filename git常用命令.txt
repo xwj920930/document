@@ -11,6 +11,7 @@ $ git init 把这个目录变成Git可以管理的仓库(后续新建提交和ss
 
 操作版本库
 $ git add 文件名 添加文件(新增或者更改都需要先add)
+$ git add . 添加该目录所有文件
 $ git commit -m "说明" 提交到本地版本库
 
 $ git status 查看仓库状态
