@@ -45,11 +45,13 @@ $ git clone git@server-name:path/repo-name.git 克隆(不需要另建文件夹)
 $ git branch -a 查看所有分支
 $ git branch -vv 查看分支关联
 $ git branch dev 创建分支
+$ git branch --set-upstream-to origin/dev dev 关联分支
 $ git checkout dev 切换分支
 $ git merge dev 合并某分支到当前分支
 $ git merge --no-ff -m "msg" dev 普通模式合并，合并后的历史有分支
 $ git branch -d dev 删除分支
 $ git checkout -b dev 创建并切换分支
+$ git checkout -b dev origin/dev 创建+切换+关联分支
 
 
 合并分支,无法merge
