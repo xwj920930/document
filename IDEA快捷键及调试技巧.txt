@@ -46,3 +46,6 @@ debug调试：F6一步，F8跳到下个节点，F5进入游标当前方法，F7步出
 查看类的继承关系：F4
 
 快速生成单元测试：鼠标选择类名，alt+enter
+
+调试技巧：
+https://blog.csdn.net/minkeyto/article/details/81489041
