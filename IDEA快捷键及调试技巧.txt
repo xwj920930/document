@@ -11,7 +11,7 @@ idea（copy eclipse）快捷键：
 
 修改文件名：shift+alt+r
 
-打开类：shift+ctrl+t
+查找类：shift+ctrl+t 或 shift+shift
 
 Get和set生成：alt+insert
 
@@ -25,7 +25,7 @@ Main方法：psvm
 
 打开方法的实现：Ctrl+t
 
-查看方法被谁调用：Ctrl+g
+查看方法被谁调用：Ctrl+g 或 Ctrl+点击类
 
 for循环快捷提示：fori或itar
 
