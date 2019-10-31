@@ -1,5 +1,5 @@
 idea（copy eclipse）快捷键：
-快速查看方法：ctrl+o
+快速查看方法：ctrl+o 或 左边栏structure
 
 快速转换编辑器：ctrl+e
 
