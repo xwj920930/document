@@ -9,3 +9,10 @@
 ？？？springboot动态数据源切换（读写分离@TargetDataSource）
 
 4.A a = C;B b = C,Map(a,b),修改C后Map也会改变
+
+5.流里面推荐使用AtomicInteger而非int，AtomicReference<？>相当于AtomicObject
+
+6.EnumMap效率非常高，比常量快
+EnumMap<Enum, Object> enumMap = new EnumMap<>(Enum.class)
+enumMap.put(Enum.A, object)
+enumMap.get(Enum.A)
