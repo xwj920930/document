@@ -1,0 +1,11 @@
+查看所有镜像：
+docker images
+显示如下所示
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+redis                         5.0.5               63130206b0fa        4 months ago        98.2MB
+
+修改名字：
+docker tag 63130206b0fa redis:5.0.5  
+
+安装本地镜像：
+docker load -i D:\Docker\docker_image\redis-5.0.5.docker
