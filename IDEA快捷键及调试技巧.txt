@@ -47,5 +47,11 @@ debug调试：F6一步，F8跳到下个节点，F5进入游标当前方法，F7步出
 
 快速生成单元测试：鼠标选择类名，alt+enter
 
+代码过了断点后重回到断点处：debugger控制台选中断点右键选择Drop frame，后F6重新进入断点
+
+直接return无法看到返回的情况：选中代码段用evaluate expression(计算器图标)
+
+热部署：https://www.jianshu.com/p/f658fed35786
+
 调试技巧：
 https://blog.csdn.net/minkeyto/article/details/81489041
