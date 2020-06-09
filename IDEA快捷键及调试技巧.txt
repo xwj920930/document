@@ -1,9 +1,13 @@
 idea（copy eclipse）快捷键：
 快速查看方法：ctrl+o 或 左边栏structure
 
-快速转换编辑器：ctrl+e
+打开最近的文件列表：ctrl+e
 
 智能补全：Alt + /
+
+注释：Ctrl + /
+
+文件内查找/工程内查找：Ctrl + F/Ctrl + H
 
 回到最后一次编辑的地方：ctrl+q
 
@@ -11,13 +15,11 @@ idea（copy eclipse）快捷键：
 
 修改文件名：shift+alt+r
 
-查找类：shift+ctrl+t 或 shift+shift
+查找类/文件/方法：shift+shift
 
 Get和set生成：alt+insert
 
 Try catch生成：Ctrl+Alt+T
-
-打开方法查找：Ctrl+shift+alt+n
 
 Main方法：psvm
 
