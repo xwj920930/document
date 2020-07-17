@@ -53,7 +53,9 @@ debug调试：F6一步，F8跳到下个节点，F5进入游标当前方法，F7步出
 
 直接return无法看到返回的情况：选中代码段用evaluate expression(计算器图标)
 
-热部署：https://www.jianshu.com/p/f658fed35786
+IDEA重新编译文件(热部署使用)：Ctrl+Shift+F9
+
+IDEA重新编译项目(热部署使用)：Ctrl+F9
 
 调试技巧：
 https://blog.csdn.net/minkeyto/article/details/81489041
