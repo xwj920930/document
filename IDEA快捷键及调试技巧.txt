@@ -57,5 +57,7 @@ IDEA重新编译文件(热部署使用)：Ctrl+Shift+F9
 
 IDEA重新编译项目(热部署使用)：Ctrl+F9
 
+IDEA的console页面搜索(手动更改keymap)：Alt+F
+
 调试技巧：
 https://blog.csdn.net/minkeyto/article/details/81489041
