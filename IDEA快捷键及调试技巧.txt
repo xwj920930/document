@@ -1,9 +1,13 @@
 idea（copy eclipse）快捷键：
 快速查看方法：ctrl+o 或 左边栏structure
 
-快速转换编辑器：ctrl+e
+打开最近的文件列表：ctrl+e
 
 智能补全：Alt + /
+
+注释：Ctrl + /
+
+文件内查找/工程内查找：Ctrl + F/Ctrl + H
 
 回到最后一次编辑的地方：ctrl+q
 
@@ -11,13 +15,11 @@ idea（copy eclipse）快捷键：
 
 修改文件名：shift+alt+r
 
-查找类：shift+ctrl+t 或 shift+shift
+查找类/文件/方法：shift+shift
 
 Get和set生成：alt+insert
 
 Try catch生成：Ctrl+Alt+T
-
-打开方法查找：Ctrl+shift+alt+n
 
 Main方法：psvm
 
@@ -46,6 +48,16 @@ debug调试：F6一步，F8跳到下个节点，F5进入游标当前方法，F7步出
 查看类的继承关系：F4
 
 快速生成单元测试：鼠标选择类名，alt+enter
+
+代码过了断点后重回到断点处：debugger控制台选中断点右键选择Drop frame，后F6重新进入断点
+
+直接return无法看到返回的情况：选中代码段用evaluate expression(计算器图标)
+
+IDEA重新编译文件(热部署使用)：Ctrl+Shift+F9
+
+IDEA重新编译项目(热部署使用)：Ctrl+F9
+
+IDEA的console页面搜索(手动更改keymap)：Alt+F
 
 调试技巧：
 https://blog.csdn.net/minkeyto/article/details/81489041

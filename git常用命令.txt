@@ -53,6 +53,8 @@ $ git reflog 记录每一次命令
 
 $ git checkout -- file 直接丢弃工作区的修改(可用于add以前，commit以前回退，放弃工作区修改)
 
+$ git clean -f 删除 untracked files(用于merge以后回退删除残余文件)
+
 删除文件
 $ git rm file(已经add/commit,在目录中删除)
 
