@@ -150,3 +150,5 @@ $ git push origin :refs/tags/<tagname> 可以删除一个远程标签。
 
 github连接超时
 https://blog.csdn.net/hanchao5272/article/details/79393393
+
+github后续不支持账号密码登录收发信息，有一个解决方法是命令行中输入账号，密码输入token
