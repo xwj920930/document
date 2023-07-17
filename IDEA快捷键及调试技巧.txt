@@ -21,6 +21,10 @@ Get和set生成：alt+insert
 
 Try catch生成：Ctrl+Alt+T
 
+快速复制选中行：Ctrl+Alt+下
+
+上下跳转方法：Ctrl+shift+上/下
+
 Main方法：psvm
 
 删除一行：Ctrl+d
